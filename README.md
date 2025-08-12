@@ -1,6 +1,23 @@
 # Absensi RFID SMAN 6
 
-Aplikasi absensi siswa SMAN 6 berbasis web menggunakan RFID, Laravel 10, dan Tailwind CSS 3.
+<!-- Badges -->
+<a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/badge/laravel-10-red?logo=laravel" alt="Laravel 10">
+</a>
+<a href="https://www.npmjs.com/package/tailwindcss">
+    <img src="https://img.shields.io/badge/tailwindcss-3-blue?logo=tailwindcss" alt="Tailwind CSS 3">
+</a>
+<a href="https://www.npmjs.com/package/toastify-js">
+    <img src="https://img.shields.io/badge/toastify.js-1.12.0-orange?logo=javascript" alt="Toastify.js 1.12.0">
+</a>
+<a href="https://nodejs.org/">
+    <img src="https://img.shields.io/badge/node.js-18.x-green?logo=node.js" alt="Node.js 18.x">
+</a>
+<a href="https://www.npmjs.com/">
+    <img src="https://img.shields.io/badge/npm-9.x-CB3837?logo=npm" alt="npm 9.x">
+</a>
+
+Aplikasi absensi siswa SMAN 6.
 
 ![Laravel Logo](https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg)
 

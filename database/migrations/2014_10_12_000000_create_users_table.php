@@ -6,27 +6,37 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
+        Schema::create('rfid_cards', function (Blueprint $table) {
+            $table->string('uid')->primary(); // UID from card, used as primary key
+            $table->string('rfid_code')->unique()->nullable();
+            $table->enum('status', ['unregistered', 'registered'])->default('unregistered');
+            $table->timestamps();
+        });
+
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('nisn')->unique();
+            $table->string('email')->unique()->nullable();
             $table->string('password');
-            $table->rememberToken();
+        
+            $table->uuid('current_class_id')->nullable();
+            $table->foreign('current_class_id')->references('id')->on('classes')->onDelete('set null');
+        
+            $table->enum('role', ['student', 'teacher', 'admin'])->default('student');
+        
+            $table->string('rfid_card_uid')->nullable()->unique();
+            $table->foreign('rfid_card_uid')->references('uid')->on('rfid_cards')->onDelete('set null');
+        
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('users');
+        Schema::dropIfExists('rfid_cards');
     }
 };

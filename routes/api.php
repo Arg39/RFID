@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/scan-card', [ScansController::class, 'store']);
+Route::post('/scan-card', [ScansController::class, 'scan']);
 

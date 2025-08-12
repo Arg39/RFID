@@ -14,7 +14,7 @@ class PostResource extends JsonResource
     public function __construct($status, $message, $resource)
     {
         parent::__construct($resource);
-        $this->status  = $status;
+        $this->status  = (bool) $status;
         $this->message = $message;
     }
 
@@ -26,10 +26,9 @@ class PostResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'success'   => $this->status,
-            'message'   => $this->message,
-            'data'      => $this->resource,
-            // 'timestamp' => now()->toDateTimeString(),
+            'status'   => $this->status ? 'success' : 'failed',
+            'message'  => $this->message,
+            'data'     => $this->resource,
         ];
     }
 }

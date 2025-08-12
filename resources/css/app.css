@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* make it all using font poppins */
+html,
+body,
+* {
+    font-family: "Poppins", Arial, Helvetica, sans-serif !important;
+}
